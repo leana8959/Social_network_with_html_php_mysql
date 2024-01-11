@@ -1,9 +1,7 @@
 <?php
 // Start the session
-session_start();
 ob_start();
-?>
-<?php
+session_start();
 include("config.conf");
 // If not logged in, display a login form or redirect to the login page
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
@@ -34,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         header("Location: profile.php");
         }
     } else {
-        echo "Login failed. Invalid credentials.";
+        // echo "Login failed. Invalid credentials.";
         header("Location: in.html");
     }
 }

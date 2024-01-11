@@ -125,6 +125,7 @@ body div.series div.my-block {
   border-radius: 14px;
   margin: 0.3rem;
   padding: 0.8rem;
+  max-height: 120px;
   margin-top: 0;
   flex: 0 1 330px;
   border: 2px solid rebeccapurple;
@@ -133,6 +134,7 @@ body div.series div.my-block {
   list-style-type: none;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: scroll;
 }
 body div.series div.my-block div.series-title {
   margin-top: 0;
@@ -161,4 +163,36 @@ body div.series div.blankspace-2 {
   display: flex;
   align-items: center;
   /* border: 5px solid cyan; */
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background: orchid;
+}
+/*上下按鈕*/
+::-webkit-scrollbar-button {
+  background: transparent;
+}
+::-webkit-scrollbar-button:hover {
+  background: cyan;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(241, 40, 174);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

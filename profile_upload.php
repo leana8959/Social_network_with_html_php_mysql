@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -58,14 +59,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Profile</title>
+    <link rel="stylesheet" href="./style/profile_upload.css" />
 </head>
 <body>
-    <h2>Upload Profile</h2>
+    <div class="title"><h2>Upload Profile</h2></div>
+    <div class="container">
+        <form action="profile_upload.php" method="post" enctype="multipart/form-data">
+            <label class="avatar">
+            <h2>Select Avatar:</h2>
+            <input class="avatar" type="file" name="avatar" accept="image/*"/>
+            <div class="avatar-file"><p>Choose a file</p></div>
+            </label>
+            <label class="intro"><h3>Introduction:</h3> </label>
+            <textarea name="intro" rows="4" cols="50"></textarea>
+            <input class="submit" type="submit" value="Upload" name="submit">
+        </form>
+    </div>
+    <a class="go-back" href="profile.php"><h3>back to series!</h3></a>
     
-    <form action="profile_upload.php" method="post" enctype="multipart/form-data">
-        Select Avatar: <input type="file" name="avatar"><br>
-        Introduction: <textarea name="intro" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Upload" name="submit">
-    </form>
 </body>
 </html>

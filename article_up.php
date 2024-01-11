@@ -1,5 +1,4 @@
-<?php session_start();
-?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +17,35 @@
             <textarea name="record" id="content" rows="4" cols="50" placeholder="What's in Ur Mind" required></textarea>
             <input type="submit" value="Upload" name="submit" class="submit">
         </form>
+        <!-- <button onclick="changetolink();">link</button> -->
     </div>
 </body>
+    <script>
+        // function changetolink(e){
+        //     text = (document.all) ? document.selection.createRange().text : document.getSelection(); 
+        //     console.log(text);
+        //     // document.getElementsByName("record")
+        // }
+    //     function changetolink() {
+    //     var selectedText = (document.all) ? document.selection.createRange().text : document.getSelection().toString();
+    //   alert(selectedText);
+    //     if (selectedText) {
+    //         var linkURL = prompt("Enter the URL for the link:", "http://");
+    //         if (linkURL) {
+    //             var linkElement = document.createElement("a");
+    //             linkElement.href = linkURL;
+    //             linkElement.textContent = selectedText;
+
+    //             var contentTextArea = document.getElementById("content");
+    //             var content = contentTextArea.value;
+    //             var start = contentTextArea.selectionStart;
+    //             var end = contentTextArea.selectionEnd;
+
+    //             contentTextArea.value = content.substring(0, start) + linkElement.outerHTML + content.substring(end);
+    //         }
+    //     }
+    // }
+    </script>
 </html>
 <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,10 +67,10 @@
         $series_title = isset($_SESSION["s_t"]) ? $_SESSION["s_t"] :" ";
         $sql = "INSERT INTO article (acc,series,title,content) VALUES ('$name', '$series_title','$t', '$c')";
         $q=mysqli_query($conn,$sql);
-        if ($q) {
-            // echo "Entry!";
-        }else{
-            echo "f";
-        }
+        // if ($q) {
+        //     // echo $c;
+        // }else{
+        //     echo "f";
+        // }
         echo '<a class="back" href="demo_a.php">'.'back to demo'.'</a>'; 
     }

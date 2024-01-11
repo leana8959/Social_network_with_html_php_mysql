@@ -47,27 +47,23 @@
     $sql = "SELECT * FROM article WHERE (series= '$s') AND (acc='$a')";//select acc information
     $result = $conn->query($sql);
     
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $title = $row['title'];
+    if ($result->num_rows > 0 ) {
+    while ($row = $result->fetch_assoc()) {
+            $title = $row['title']; 
             echo '<div class="demo-block"><div class="block-title"><div class="title"><p>'.$row['title']. '</p></div>'.
-            '<div class="del-article"><i class="fas fa-trash"></i></div></div>'.'<a href="article_update.php?article_title='.urldecode($title).'"><i class="fa-solid fa-file-pen"></i></a>'.
+           '<div class="update"><a href="article_update.php?article_title='.urldecode($title).'"><i class="fa-solid fa-file-pen"></i></a></div>'.'<div class="del-article"><i class="fas fa-trash"></i></div></div>'.
             '<hr>'.
             '<div class="content"><p style="white-space: pre-line;">'.$row['content'].'</p></div></div>';
+            // echo $row['created_at'];
         }
     } else {
         echo "No article. <h1>JUST DO IT.</h1>";
     }
-    
-    // echo '<h2><div><a href=" ">'. $_SESSION['title']."</a></div></h2>";
-    // echo "<div>". $_SESSION['s_intro']."</div>";
-    //article part
-    // echo '';
     ?>
     </div>
         <div class="exit-area">
-            <a href="article_up.php">upload exitement</a>
-            <h3><a href="profile.php">go back go back</a></h3>
+            <a href="article_up.php"><i class="fa-solid fa-file-import"></i><h3>upload exitement</h3></a>
+            <a href="profile.php"><i class="fa-solid fa-door-open"></i><h3>go back go back</h3></a>
         </div>
         <script>
     let deleteOrNot = document.querySelectorAll(".del-article");

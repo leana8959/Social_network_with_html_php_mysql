@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Create Article</h2>
+        <h2>UPDATE</h2>
         <!-- send data and pass title -->
         <form action="article_update.php?article_title=<?php echo $_GET['article_title'];?>" method="post" onsubmit="false">
             <!-- <label for="title">Title</label>

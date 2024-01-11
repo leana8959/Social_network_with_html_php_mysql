@@ -11,20 +11,16 @@
     <div class="title"><h2>creat series</h2></div>
     <!-- enctype="multipart/form-data" -->
     <div class="container">
-    <form action="series_upload.php" method="post">
-        title of series <input type="text" name="title" ><br>
-        Introduction: <textarea name="intro" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Upload" name="submit">
-    </form>
+        <form action="series_upload.php" method="post">
+            <label for="title">Title of series</label>
+            <input type="text" name="title" id="title" required>
+            <label for="content">Introduction: </label>
+            <textarea name="intro" rows="4" cols="50"></textarea>
+            <input class="submit" type="submit" value="Upload" name="submit">
+        </form>
     </div>
-    <div class="go-back">
-    <h3><a href="profile.php">back to series!</a></h3>
-    </div>
-    
-
-
-
-</body>
+    <a class="go-back" href="profile.php"><h3>back to series!</h3></a>
+    </body>
 </html>
 <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -52,6 +48,5 @@
         }
     }
     // header("Location: profile.php");
-    //intro upt
 ?>
 

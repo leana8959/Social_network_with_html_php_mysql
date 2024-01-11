@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php 
     session_start();
     //connect to db 
