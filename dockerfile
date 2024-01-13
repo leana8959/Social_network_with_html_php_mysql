@@ -5,12 +5,16 @@ FROM php:7.4-apache
 RUN docker-php-ext-install mysqli pdo_mysql
 
 # make all file same layer of dockerfile to path
-COPY ./* /var/www/html/
+COPY ./*.css /var/www/html/
+COPY ./*.php /var/www/html/
+COPY ./*.html /var/www/html/
 
 # # copy dir to path
 COPY ./style/ /var/www/html/style/
 # COPY ./mysql/ /var/www/html/mysql/
-# COPY ./avatar/ /var/www/html/avatar/ # TODO:import to `avatar` volume
+
+RUN mkdir /var/www/html/avatar/
+RUN chown www-data /var/www/html/avatar/
 
 # expose
 EXPOSE 80
